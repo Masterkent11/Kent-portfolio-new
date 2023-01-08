@@ -1,0 +1,25 @@
+@import 
+    '../../../components/Navbar/Navbar';
+
+//components
+@import
+    '../../../container/About/About',
+    '../../../container/Contact/Contact',
+    '../../../container/Skills/Skills',
+    '../../../container/Testimonials/Testimonials',
+    '../../../container/Work/Work',
+    '../../../container/Header/Header',
+    '../../../container/AboutMe//AboutMe';
+
+
+
+//Abstraction
+@import
+    './Abstraction/Mixin',
+    './Abstraction/Variables';
+
+
+//App
+@import
+    '../../../App';
+

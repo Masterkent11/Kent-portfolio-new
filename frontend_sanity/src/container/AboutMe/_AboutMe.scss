@@ -1,0 +1,25 @@
+
+.aboutMe__main{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.image__aboutMe{
+    width: 100%;
+}
+.text__AboutMe{
+    text-align: left;
+    padding: 10px;
+
+    @media screen and (max-width: 600px) {
+        font-size: 1rem;
+        line-height: 1.5;
+        
+    }
+
+    
+}
+.text__AboutMe__Title{
+    font-size: 1.1rem;
+    font-weight: bold;
+}
