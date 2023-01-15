@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.59bf14ba.css",
-    "main.js": "/static/js/main.bea2c723.js",
+    "main.js": "/static/js/main.a0f3da57.js",
     "static/media/about04.png": "/static/media/about04.fa7b3a72ed32b0e25bfb.png",
     "static/media/about02.png": "/static/media/about02.7a3df03410ee756268ec.png",
     "static/media/about01.png": "/static/media/about01.080509de05322b7aafda.png",
@@ -28,7 +28,7 @@
     "static/media/git.png": "/static/media/git.a54d3fa44e02f2f61e69.png",
     "static/media/skype.png": "/static/media/skype.c8d7ee175da5b4c8a8ab.png",
     "static/media/sanity.svg": "/static/media/sanity.cbb8797c94dd63ca33e268584569e53f.svg",
-    "static/media/discordLogo.svg": "/static/media/discordLogo.d1d464bd6481a21fcde599e0d8699273.svg",
+    "static/media/discord-icon-svgrepo-com.svg": "/static/media/discord-icon-svgrepo-com.19a330aac661dc5e2a2ef9bf952260b1.svg",
     "static/media/upwork1.svg": "/static/media/upwork1.6f20d0da68ad4c433677f0fd4fa7b518.svg",
     "static/media/blob.svg": "/static/media/blob.11d857ee72dea2ed2b76f3dcbf8cb251.svg",
     "index.html": "/index.html",
@@ -36,10 +36,10 @@
     "static/media/material-ui-1.svg": "/static/media/material-ui-1.fd510ed8518b192069590b04e2e6348a.svg",
     "static/media/circle.svg": "/static/media/circle.134eeeb1e58895b892195fe8ed63bc9f.svg",
     "main.59bf14ba.css.map": "/static/css/main.59bf14ba.css.map",
-    "main.bea2c723.js.map": "/static/js/main.bea2c723.js.map"
+    "main.a0f3da57.js.map": "/static/js/main.a0f3da57.js.map"
   },
   "entrypoints": [
     "static/css/main.59bf14ba.css",
-    "static/js/main.bea2c723.js"
+    "static/js/main.a0f3da57.js"
   ]
 }
