@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { AppWrap, MotionWrap } from '../../wrapper';
-import { Grid, Stack, Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 
 import { images } from '../../constant';
