@@ -39,7 +39,7 @@ import blob from '../Assets/Images/blob.svg';
 import brand from '../Assets/Images/brand.png';
 import upwork1 from '../Assets/Images/upwork.svg';
 import upwork2 from '../Assets/Images/upwork1.svg';
-import discord from '../Assets/Images/discordLogo.svg';
+import discord from '../Assets/Images/discord-icon-svgrepo-com.svg';
 import mkmedia from '../Assets/Images/MkMediaLLC.png';
 
 
