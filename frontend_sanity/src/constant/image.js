@@ -42,6 +42,7 @@ import upwork2 from '../Assets/Images/upwork1.svg';
 import discord from '../Assets/Images/discord-icon-svgrepo-com.svg';
 import mkmedia from '../Assets/Images/MkMediaLLC.png';
 import ouch from '../Assets/Images/aww.mp3';
+import mongoDB from '../Assets/Images/mongodb-icon.svg';
 
 
 
@@ -95,4 +96,5 @@ export default {
     mkmedia,
     upwork2,
     ouch,
+    mongoDB,
 };

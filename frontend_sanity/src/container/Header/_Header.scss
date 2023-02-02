@@ -60,6 +60,7 @@
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
+    gap: 1vmin;
   
     .badge-cmp,
     .tag-cmp {
@@ -96,14 +97,24 @@
     .tag-cmp {
       flex-direction: column;
       margin-top: 3rem;
+
   
       p {
         width: 100%;
         text-transform: uppercase;
         text-align: right;
       }
+      .call__to__action{
+        background-color: antiquewhite;
+        padding: 10px;
+        font-size: medium;
+        line-height: 5vmin;
+        width: 100%;
+        text-transform: uppercase;
+        text-align: right;
+      }
     }
-  
+
     span {
       font-size: 2.5rem;
   

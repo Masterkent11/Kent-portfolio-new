@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { motion } from 'framer-motion';
 
 import {AppWrap} from '../../wrapper';
@@ -18,12 +18,21 @@ const scaleVariants = {
     },
   },
 };
+const tags = ['Full Stack Web Developer', 'React Js Developer', 'UX/UI Designer', 'Freelancer'];
+const Header = () => {
+  const [currentTag, setCurrentTag] = useState(0);
 
-const Header = () => (
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setCurrentTag((currentTag + 1) % tags.length);
+    }, 5000);
+    return () => clearTimeout(timeoutId);
+  }, [currentTag]);
+
+  return(
 
 
-  
-
+  <>
   <div className="app__header app__flex">
     <motion.div
       whileInView={{ y: [-100, 0], opacity: [0, 1] }}
@@ -39,12 +48,65 @@ const Header = () => (
           </div>
         </div>
 
-        <div className="tag-cmp app__flex">
-          <p className="p-text">Full Stack Web Developer</p>
-          <p className="p-text">React Js Developer</p>
-          <p className="p-text">UX/UI Designer</p>
-          <p className="p-text">Freelancer</p>
-        </div>
+
+
+        <motion.d
+            whileInView={{ y: [-30, 0, 0], opacity: [0, 0, 1] }}
+            transition={{ duration: 1.5 }}
+          >
+              {/* <div className="tag-cmp app__flex">
+                  <motion.p
+                      whileInView={{ x: [-200, -50, 0], opacity: [0, 0, 1] }}
+                      transition={{ duration: 1.5 }}
+                      className="p-text"
+                      >
+                    Full Stack Web Developer
+                </motion.p>
+                <motion.p
+                  whileInView={{ x: [-200, -50, 0], opacity: [0, 0, 1] }}
+                  transition={{ duration: 1.5 }}
+                  className="p-text"
+                >
+                  React Js Developer
+                
+                </motion.p>
+
+                <motion.p
+                  whileInView={{ x: [-200, -50, 0], opacity: [0, 0, 1] }}
+                  transition={{ duration: 1.5 }}
+                  className="p-text"
+                >
+                  UX/UI Designer
+                    
+                </motion.p>
+
+                <motion.p
+                  whileInView={{ x: [-200, -50, 0], opacity: [0, 0, 1] }}
+                  transition={{ duration: 1.5 }}
+                  className="p-text"
+                  
+                >
+                  Freelancer
+  
+                </motion.p>
+              </div> */}
+
+<motion.div className="tag-cmp app__flex"
+whileInView={{ x: [-50, -50, 0], opacity: [0, 0, 1] }}
+transition={{ duration: 1.5 }}>
+      {tags.map((tag, index) => (
+        <motion.p
+          key={tag}
+          whileInView={index === currentTag ? { y: [-200, 0, 0], opacity: [0, 0, 1] } : {}}
+          transition={{ duration: 1.5 }}
+          className="p-text"
+        >
+          {tag}
+        </motion.p>
+      ))}
+    </motion.div>
+        </motion.d>
+        
       </div>
     </motion.div>
     
@@ -70,13 +132,14 @@ const Header = () => (
       whileInView={scaleVariants.whileInView}
       className="app__header-circles"
     >
-      {[images.sanity, images.react, images.javascript,images.sass].map((circle, index) => (
+      {[images.node, images.react, images.javascript,images.mongoDB].map((circle, index) => (
         <div className="circle-cmp app__flex" key={`circle-${index}`}>
           <img src={circle} alt="profile_bg" />
         </div>
       ))}
     </motion.div>
   </div>
-);
+  </>
+)};
 
 export default AppWrap(Header, 'home');
