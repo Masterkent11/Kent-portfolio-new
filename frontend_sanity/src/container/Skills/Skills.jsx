@@ -5,12 +5,14 @@ import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
 import { Stack } from '@mui/system';
 import { Tooltip as ReactTooltip } from 'react-tooltip'
+import { Button } from '@mui/material';
 
 
 
 const Skills = () => {
     const [experiences, setExperiences] = useState([]);
     const [skills, setSkills] = useState([]);
+    const [filterWork, setFilterWork] = useState([]);
 
     useEffect(() => {
         const query = '*[_type == "experiences"]';
@@ -22,6 +24,7 @@ const Skills = () => {
         });
         client.fetch(skillsQuery)
         .then((data)=>{
+          setFilterWork(data);
             setSkills(data);
         })
       }, []);
@@ -42,27 +45,34 @@ const Skills = () => {
                 <motion.div 
                     className='app__skills-list'
                     >
-                    {skills.map((skill)=>(
-                        <motion.div
-                            whileInView={{opacity: [0,1]}}
-                            transition={{duration: 0.5}}
-                            className="app__skills-item app__flex"
-                            key={skill.name}
-                            >
-                                <div 
-                                    className="app__flex" 
-                                    style={{
-                                    backgroundColor: skill.bgColor
-                                    }}
-                                    >
-                                    <img 
-                                        src={urlFor(skill.icon)} 
-                                        alt={skill.name} />
+                            <Stack 
+                                  display={'flex'} 
+                                  flexDirection={'row'}
+                                  flexWrap={'wrap'}>
+                              
+                                      {filterWork.slice(0,8).map((skill)=>(
+
+                                           <motion.div
+                                              whileInView={{opacity: [0,1]}}
+                                              transition={{duration: 0.5}}
+                                              className="app__skills-item app__flex"
+                                              key={skill.name}
+                                            >
+                        
+                                            <div 
+                                              className="app__flex" 
+                                              style={{
+                                              backgroundColor: skill.bgColor
+                                              }}
+                                              >
+                                          <img 
+                                              src={urlFor(skill.icon)} 
+                                              alt={skill.name} />
                                 </div>
                                     <p className='p-text'>{skill.name}</p>
                         </motion.div>
                     ))}
-                    
+                      </Stack>
                 </motion.div>
         <Stack 
         className="app__skills-exp"

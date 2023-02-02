@@ -1010,6 +1010,8 @@
 }
 
 .image__aboutMe {
+  border-radius: 0.8em;
+  position: static;
   width: 100%;
 }
 
@@ -1027,6 +1029,57 @@
 .text__AboutMe__Title {
   font-size: 1.1rem;
   font-weight: bold;
+}
+
+.example-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.next,
+.prev {
+  top: 20vmin;
+  position: absolute;
+  background: white;
+  border-radius: 30px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  z-index: 2;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev {
+  left: 10px;
+  transform: scale(-1);
+}
+
+.refresh {
+  padding: 10px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 * {
@@ -1102,7 +1155,7 @@
 }
 
 .head-text {
-  font-size: 2.75rem;
+  font-size: 5.65vmin;
   font-weight: 800;
   text-align: center;
   color: #030303;
@@ -1113,12 +1166,12 @@
 }
 @media screen and (min-width: 2000px) {
   .head-text {
-    font-size: 4rem;
+    font-size: 5.4vmin;
   }
 }
 @media screen and (max-width: 450px) {
   .head-text {
-    font-size: 2rem;
+    font-size: 5.3vmin;
   }
 }
 

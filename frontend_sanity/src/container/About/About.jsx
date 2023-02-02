@@ -33,7 +33,13 @@ import { Button } from '@mui/material';
     }
     return (
         <>
-        <h2 className="head-text">I Know that <span>Good Design</span> <br />means  <span>Good Business</span></h2> 
+        <motion.div
+           whileInView={{ x: [-50, -50, 0], opacity: [0, 0, 1] }}
+           transition={{duration: 2.5,type:'tween'}}
+        >
+        <h2 className="head-text"> Maximize Your Success<span>  with</span> <br /> <span>  My Proven Web Development Certificate</span></h2> 
+        </motion.div>
+      
          
                 <Stack className="app__profiles"
                 display={'flex'}
@@ -43,9 +49,9 @@ import { Button } from '@mui/material';
                 >
                 {abouts.slice(0,loadMore).map((about, index) => (
                     <motion.div
-                    whileInView={{opacity: 1}}
+                    whileInView={{ x: [50, 50, 0], opacity: [0, 0, 1] }}
                     whileHover={{scale: 1.1}}
-                    transition={{duration: 0.5,type:'tween'}}
+                    transition={{duration: 1.8,type:'tween'}}
                     className="app__profile-item" 
                     key={about.title+index}
                     >

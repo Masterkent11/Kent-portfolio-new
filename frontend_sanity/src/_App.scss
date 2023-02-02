@@ -69,7 +69,7 @@
   }
   
   .head-text {
-    font-size: 2.75rem;
+    font-size: 5.65vmin;
     font-weight: 800;
     text-align: center;
     color: $black-color;
@@ -80,11 +80,11 @@
     }
   
     @media screen and (min-width: 2000px) {
-      font-size: 4rem;
+      font-size: 5.4vmin;
     }
   
     @media screen and (max-width: 450px) {
-      font-size: 2rem;
+      font-size: 5.3vmin;
     }
   }
   

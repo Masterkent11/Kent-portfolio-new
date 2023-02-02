@@ -1,12 +1,17 @@
 
+
+
 .aboutMe__main{
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 .image__aboutMe{
+  border-radius: 0.8em;
+  position: static;
     width: 100%;
 }
+
 .text__AboutMe{
     text-align: left;
     padding: 10px;
@@ -23,3 +28,66 @@
     font-size: 1.1rem;
     font-weight: bold;
 }
+
+// Swipe effects
+
+
+
+.example-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.next,
+.prev {
+  top: 20vmin;
+  position: absolute;
+  background: white;
+  border-radius: 30px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  z-index: 2;
+
+  // @media (width <= 900px) {
+  //   display: none;
+    
+  // }
+}
+
+.next {
+  right: 10px;
+}
+
+.prev {
+  left: 10px;
+  transform: scale(-1);
+}
+
+
+
+.refresh {
+  padding: 10px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+

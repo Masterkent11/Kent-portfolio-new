@@ -14,7 +14,7 @@ const Works = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [loadMore, setLoadMore] = useState(3);
-
+  const [desiredLengthLimit, setDesiredLengthLimit] = useState(6);
   useEffect(() => {
     async function fetchData() {
       const query = '*[_type == "works"]';
@@ -32,11 +32,19 @@ const Works = () => {
     setAnimateCard([{ y: 100, opacity: 1 }]);
     setTimeout(() => {
       setAnimateCard([{ y: 0, opacity: 1 }]);
-      
-      setLoadMore((prevValue)=>prevValue + 1)
+        setLoadMore(prevValue => prevValue + 1) 
     },500)
+}
+
+const resetLoadMore = () => {
+  setAnimateCard([{ y: 100, opacity: 1 }]);
+
+  setTimeout(() => {
+    setAnimateCard([{ y: 0, opacity: 1 }]);
+    setLoadMore(3);
+  },500)
     
-  }
+}
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
     setAnimateCard([{ y: 100, opacity: 0 }]);
@@ -90,6 +98,7 @@ const Works = () => {
 
               <motion.div
                 whileHover={{ opacity: [0, 1] }}
+                
                 transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
                 className="app__work-hover app__flex"
               >
@@ -130,19 +139,28 @@ const Works = () => {
       </motion.div>
 
       <motion.div 
-          className='item__loadMore'
-          animate={animateCard}
-          transition={{ duration: 0.5, delayChildren: 0.5 }}
-          >
-            {loadMore?(<Button 
-          variant='contained'
-          onClick={showMoreItems}
-          className={'button__loadMore'}
-        >
-          Load More
-        </Button>): null}
-      
-      </motion.div>
+    className='item__loadMore'
+    animate={animateCard}
+    transition={{ duration: 0.5, delayChildren: 0.5 }}
+  >
+    {loadMore < desiredLengthLimit ? (
+      <Button 
+        variant='contained'
+        onClick={showMoreItems}
+        className={'button__loadMore'}
+      >
+        Load More
+      </Button>
+    ) : (
+      <Button 
+        variant='contained'
+        onClick={resetLoadMore}
+        className={'button__loadMore'}
+      >
+        Back
+      </Button>
+    )}
+  </motion.div>
       
     </>
   );

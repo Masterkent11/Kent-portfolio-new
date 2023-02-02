@@ -1,20 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { Stack, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 
 import { images } from '../../constant';
+import { Swipe } from './Swipe.tsx';
+
 
 
 
 const AboutMe = () => {
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const playSound = () => {
+        const sound = new Audio(images.ouch);
+        sound.play();
+        setIsPlaying(true);
+    };
+
 
     return (
         <>
         <Stack display={'flex'}>
 
         
-             <h2 className="head-text">About Me</h2> 
+             <h2 className="head-text">Service offer</h2> 
              <Stack
                 display={'flex'}
                 gap={6}
@@ -24,13 +34,26 @@ const AboutMe = () => {
                 justifyContent={'center'}
                 alignItems={'center'}
                 >
+                       
                 <Stack flex={6}>
+        
                     <motion.div
                       whileInView={{ x: [50, 50, 0], opacity: [0, 0, 1] }}
                       transition={{ duration: 1.5 }}
+                      drag="x"
+                      dragConstraints={{ left: 0, right: 0 }}
+                      whileHover={{ scale: 0.9 }}
+                      whileTap={{ scale: 1.1 }}
+                      
                      
                         >
-                        <img src={images.kent} alt=""  className='image__aboutMe' />
+                                   <Swipe/>
+                       
+                        {/* <img src={images.kent}
+                             alt=""  
+                             className='image__aboutMe' 
+                             onClick={playSound}
+                             /> */}
                     </motion.div>
                 </Stack>
                 <Stack  
@@ -42,7 +65,7 @@ const AboutMe = () => {
                     className="aboutMe__main"
                     >
                     <Typography variant="body" color="initial" className='text__AboutMe'>
-                    Hi there! My name is Kent and I am a <span className='text__AboutMe__Title'>Full-Stack Web Developer</span>. I graduated from Central Mindanao University with a Bachelor of Science in Mathematics. My interest in technology began in high school, and I really enjoy solving algorithms, exploring alternative solutions, and experimenting with different approaches to help my clients succeed. These are some of the things that I am proud of as a developer.
+                    Looking for a great and <span className='text__AboutMe__Title'>talented Frontend Developer? </span>Look no further! I'm an expert in building beautiful, responsive websites and I've got the skills to bring your next project to life. My tech stack includes React JS, React Router, Material UI, SASS, Sanity, Firebase, MongoDB, Express JS, and Node JS. I specialize in creating user-friendly and visually appealing websites that are easy to navigate and use. With 3 years of experience and a background in full-stack development, I'm ready to take on any challenge. Let's make something great together!
                     </Typography>
                     <Typography variant="body" color="initial" className='text__AboutMe'>
                     I focus on quality, aesthetics, and professionalism. I have a strong foundation and proficient experience, and I am eager to be a part of helping your business reach its goals.   

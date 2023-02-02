@@ -13,12 +13,17 @@ const scaleVariants = {
     opacity: [0, 2],
     transition: {
       duration: 2,
+      yoyo: Infinity,
       ease: 'easeInOut',
     },
   },
 };
 
 const Header = () => (
+
+
+  
+
   <div className="app__header app__flex">
     <motion.div
       whileInView={{ y: [-100, 0], opacity: [0, 1] }}
